@@ -18,8 +18,8 @@ if [ "$OSVERSION" -gt "22" ]; then
 # in macOS Sonoma and higher we just need to comment the pam_tid.so line in /etc/pam.d/sudo_local.template
 
 cp /etc/pam.d/sudo_local.template /etc/pam.d/sudo_local.template_backup
-
-sed -i ''  '/pam_tid.so/ s/^#//' /etc/pam.d/sudo_local.template
+cp /etc/pam.d/sudo_local.template /etc/pam.d/sudo_local
+sed -i ''  '/pam_tid.so/ s/^#//' /etc/pam.d/sudo_local
 
 else
 	
